@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Feature Flags!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-tooltip@3.0.2/dist/css/bulma-tooltip.min.css">
+    <style type="text/css">
+        html {
+            background-color: black;
+        }
+
+        .dogphoto {
+            text-align: center;
+            margin: auto;
+            width: 400px;
+        }
+
+        .header {
+            color: #EFEFEF;
+            text-align: center;
+        }
+
+        #dogphoto_image {
+            width: 400px;
+        }
+
+        .progressbar {
+            float: left;
+            width: 100px;
+            height: 20px;
+            background-color: #000000;
+            text-align: center;
+        }
+    </style>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>
+    <script crossorigin="anonymous" src="https://cdn.jsDelivr.net/npm/launchdarkly-js-client-sdk@2.22.1"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+
+<body>
+    <div class="hero title header">LaunchDarkly Dog Photo App!</div>
+    <div class="dogphoto">
+        <div style="padding-top: 10px; padding-bottom: 10px;">
+            <div id="timebox_1" class="progressbar"></div>
+            <div id="timebox_2" class="progressbar"></div>
+            <div id="timebox_3" class="progressbar"></div>
+            <div id="timebox_4" class="progressbar"></div>
+            <div style="clear: both;"></div>
+        </div>
+        <img id="dogphoto_image" />
+    </div>
+</body>
+
+</html>
