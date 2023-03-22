@@ -34,6 +34,54 @@
             background-color: #000000;
             text-align: center;
         }
+
+        .modalBox {
+            display: block;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            min-height: 100vh;
+            min-width: 100vw;
+            background-color: rgba(255, 255, 255, .7);
+            z-index: 1;
+        }
+
+        .boxUserName {
+            background-color: white;
+            border-radius: 10px;
+            height: 100px;
+            width: 250px;
+            box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        .titleBar {
+            height: 25px;
+            background-color: black;
+            padding: 2px;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .inputBox {
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .buttonLogin {
+            margin: 10px;
+        }
+
+        input {
+            font-size: 12px;
+        }
     </style>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>
@@ -43,7 +91,7 @@
 </head>
 
 <body>
-    <div class="hero title header">LaunchDogly Photo App!</div>
+    <div id="pagetitle" class="hero title header">LaunchDogly Photo App!</div>
     <div class="dogphoto">
         <div style="padding-top: 10px; padding-bottom: 10px;">
             <div id="timebox_1" class="progressbar"></div>
@@ -52,7 +100,21 @@
             <div id="timebox_4" class="progressbar"></div>
             <div style="clear: both;"></div>
         </div>
+        <div id="myusername" style="text-align:center;font-weight:bold; font-size:16px;color:white;"></div>
         <img id="dogphoto_image" />
+    </div>
+    <div class="modalBox" id="myModalBox">
+        <div class="boxUserName">
+            <div class="titleBar">
+                Enter a username
+            </div>
+            <div class="inputBox">
+                <div>
+                    <label for="username_box">Username </label><input id="username_box" type="text" />
+                </div>
+                <div class="buttonLogin"><input type="button" value="Login" onclick="getUserName();" /></div>
+            </div>
+        </div>
     </div>
 </body>
 

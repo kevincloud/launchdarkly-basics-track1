@@ -1,8 +1,10 @@
 var dogApi = "https://dog.ceo/api/breeds/image/random";
 var flagAutoRotate = false
 var myTimer = null
+var mainBgColor = '#000000'
 
 /* Code Section */
+
 
 
 
@@ -15,7 +17,7 @@ function delay(timeInMs) {
 }
 
 function setProgress(value) {
-    var bgcolor = "#000000";
+    var bgcolor = mainBgColor;
     if (value == true)
         bgcolor = "#999999";
 
@@ -31,7 +33,7 @@ function autoRotate() {
     myTimer = setInterval(() => {
         if (secondsPassed >= 0 && secondsPassed < 4) {
             timeBox = document.getElementById("timebox_" + (4 - secondsPassed));
-            timeBox.style.backgroundColor = "#000000";
+            timeBox.style.backgroundColor = mainBgColor;
         }
         secondsPassed++;
 
